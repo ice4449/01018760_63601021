@@ -1,0 +1,28 @@
+<!doctype html>
+<title>Object Detection</title>
+<h1>Object Detection</h1>
+<h2>Select a image (.jpg) to detect</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/upload_image" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" accept=".jpg" required >
+		</p>
+    </dl>
+    <p>
+        <input type="submit" name="submit_button" value="Detect">
+	</p>
+</form>
+<!--<body>
+    <img src="{{ user_image }}" alt="User Image">
+</body>-->
